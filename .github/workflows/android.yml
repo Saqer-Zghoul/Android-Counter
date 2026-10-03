@@ -22,15 +22,13 @@ jobs:
         run: dotnet workload install maui-android
 
       - name: Restore
-        working-directory: ./MauiApp1/MauiApp1
-        run: dotnet restore
+        run: dotnet restore MauiApp1/MauiApp1/MauiApp1.csproj
 
       - name: Build APK
-        working-directory: ./MauiApp1/MauiApp1
-        run: dotnet publish -f net8.0-android -c Release -p:AndroidPackageFormat=apk
+        run: dotnet publish MauiApp1/MauiApp1/MauiApp1.csproj -f net8.0-android -c Release -p:AndroidPackageFormat=apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: MauiApp1-APK
-          path: "./MauiApp1/MauiApp1/bin/Release/net8.0-android/*.apk"
+          path: "MauiApp1/MauiApp1/bin/Release/net8.0-android/*-Signed.apk"
