@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: MauiApp1-APK
-          path: "MauiApp1/MauiApp1/bin/Release/net8.0-android/*-Signed.apk
+          path: "MauiApp1/MauiApp1/bin/Release/net8.0-android/*-Signed.apk"
